@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<!-- INHERIT FOR MOQ SETTINGS -->
+
+    <record id="sh_moq_multi_website_res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.moq.website.form.inherit</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="website_sale.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//block[@id='website_info_settings']" position="after">
+                <block title="Multiple Qty for Multi Website" name="sh_qty_shop_ajax_moq_settings_block">
+                    <setting>
+                        <field name="multi_website_moq"/>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>
